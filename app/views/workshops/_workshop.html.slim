@@ -1,0 +1,11 @@
+tr
+  td = workshop.name
+  - if workshop.manager.present?
+    td = link_to workshop.manager.name, workshop.manager
+  - else
+    td = link_to 'Create manager', new_workshop_manager_path(workshop)
+
+  - if workshop.taskmasters.present?
+    td = link_to 'Watch', workshop_taskmasters_path(workshop)
+  - else
+    td = link_to 'Create taskmasters', new_workshop_taskmaster_path(workshop)

@@ -1,0 +1,10 @@
+tr
+  td = link_to taskmaster.email, taskmaster
+  td = taskmaster.name
+  td = taskmaster.age
+  td = taskmaster.nation
+  td = taskmaster.sex
+  td = taskmaster.salary
+  td = taskmaster.work_rating
+  td = image_tag(taskmaster.avatar_url(:thumb)) if taskmaster.avatar.present?
+  td = link_to 'Watch', taskmaster_employees_path(taskmaster)

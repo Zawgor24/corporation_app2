@@ -1,0 +1,23 @@
+h1
+  | #{@taskmaster.name}'s profile
+  
+h2
+  = image_tag(@taskmaster.avatar_url(:thumb)) if @taskmaster.avatar.present?
+  br/
+  | Email: #{@taskmaster.email}
+  br/ 
+  | Age: #{@taskmaster.age}
+  br/
+  | Nation: #{@taskmaster.nation}
+  br/
+  | Sex: #{@taskmaster.sex}
+  br/
+  | Salary: #{@taskmaster.salary}
+  br/
+  | Work Rating:  #{@taskmaster.work_rating}/10
+
+div.link = link_to 'Edit profile', edit_taskmaster_path(@taskmaster)
+br/
+div.link = link_to 'Delete user', @manager,
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' }

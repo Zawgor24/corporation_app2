@@ -1,0 +1,18 @@
+h1  All Taskmasters
+
+table.table
+  thead
+    tr
+      th scope="col" Email
+      th scope="col" Name
+      th scope="col" Age
+      th scope="col" Nation
+      th scope="col" Sex
+      th scope="col" Salary
+      th scope="col" Work rating (0-10)
+      th scope="col" Avatar
+      th scope="col" Employees
+  tbody
+    = render @taskmasters
+
+= link_to 'Create taskmaster', new_workshop_taskmaster_path(@workshop)

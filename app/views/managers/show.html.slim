@@ -1,0 +1,23 @@
+h1
+  | #{@manager.name}'s profile
+  
+h2
+  = image_tag(@manager.avatar_url(:thumb)) if @manager.avatar.present?
+  br/
+  | Email: #{@manager.email}
+  br/ 
+  | Age: #{@manager.age}
+  br/
+  | Nation: #{@manager.nation}
+  br/
+  | Sex: #{@manager.sex}
+  br/
+  | Salary: #{@manager.salary}
+  br/
+  | Work Rating:  #{@manager.work_rating}/10
+
+= link_to 'Delete user', @manager,
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' }
+br/
+div.link = link_to 'Edit profile', edit_manager_path(@manager)

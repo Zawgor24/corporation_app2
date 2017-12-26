@@ -1,0 +1,10 @@
+tr
+  td = link_to corporation.name, corporation
+  td = corporation.founder
+  td = corporation.founded.strftime('%Y/%B/%d')
+  td = corporation.revenue.to_s + 'bil'
+  td = corporation.area_served
+  td = corporation.rating
+  td = image_tag(corporation.avatar_url(:thumb)) if corporation.avatar.present?
+  td = link_to 'Factories', corporation_factories_path(corporation)
+  td = link_to 'Items', corporation_items_path(corporation)

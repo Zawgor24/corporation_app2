@@ -1,0 +1,19 @@
+h1
+  | #{@principal.name}'s profile
+  
+h2
+  = image_tag(@principal.avatar_url(:thumb)) if @principal.avatar.present?
+  br/ 
+  | Email: #{@principal.email}
+  br/
+  | Age: #{@principal.age}
+  br/
+  | Nation: #{@principal.nation}
+  br/
+  | Sex: #{@principal.sex}
+  br/
+  | Salary: #{@principal.salary}
+  br/
+  | Work Rating:  #{@principal.work_rating}/10
+
+div.link = link_to 'Edit profile', edit_principal_path(@principal)

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CorpAppLesson12</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+      <% if current_principal.present? %>
+        <%= current_principal.email %>//
+        <%= link_to 'Profile', current_principal %>//
+        <%= link_to 'Home', root_path %>//
+        <%= link_to 'Logout', destroy_principal_session_path, method: :delete %>
+      <% elsif current_manager.present? %>
+        <%= current_manager.email %>//
+        <%= link_to 'Profile', current_manager %>//
+        <%= link_to 'Home', root_path %>//
+        <%= link_to 'Logout', destroy_manager_session_path, method: :delete %>
+      <% elsif current_taskmaster.present? %>
+        <%= current_taskmaster.email %>//
+        <%= link_to 'Profile', current_taskmaster %>//
+        <%= link_to 'Home', root_path %>//
+        <%= link_to 'Logout', destroy_taskmaster_session_path, method: :delete %>
+      <% elsif current_employee.present? %>
+        <%= current_employee.email %>//
+        <%= link_to 'Profile', current_employee %>//
+        <%= link_to 'Home', root_path %>//
+        <%= link_to 'Logout', destroy_employee_session_path, method: :delete %>
+      <% else %>
+        <%= link_to 'Login as Principal',  new_principal_session_path %>//
+        <%= link_to 'Login as Manager', new_manager_session_path %>//
+        <%= link_to 'Login as Taskmaster', new_taskmaster_session_path %>//
+        <%= link_to 'Login as Employee', new_employee_session_path %>
+      <% end %>
+    <%= yield %>
+  </body>
+</html>

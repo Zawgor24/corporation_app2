@@ -1,0 +1,5 @@
+tr
+  td = item.item_type
+  td = item.model
+  td #{item.price}$
+  td = image_tag(item.avatar_url(:thumb)) if item.avatar.present?

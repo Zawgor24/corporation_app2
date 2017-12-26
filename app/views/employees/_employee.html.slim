@@ -1,0 +1,9 @@
+tr
+  td = link_to employee.email, employee
+  td = employee.name
+  td = employee.age
+  td = employee.nation
+  td = employee.sex
+  td = employee.salary
+  td = employee.work_rating
+  td = image_tag(employee.avatar_url(:thumb)) if employee.avatar.present?

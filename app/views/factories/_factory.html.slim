@@ -1,0 +1,7 @@
+tr
+  td = factory.name
+  td = factory.location
+  td = image_tag(factory.avatar_url(:thumb)) if factory.avatar.present?
+  td = link_to factory.principal.name, factory.principal if factory.principal.present?
+  td = link_to 'Watch', factory_details_path(factory)
+  td = link_to 'Watch', factory_workshops_path(factory)

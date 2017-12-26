@@ -1,0 +1,9 @@
+h1 = 'All info about ' + @corporation.name
+
+h3 = 'Сorporation: ' + @corporation.name
+h3 = 'Founder: ' + @corporation.founder
+h3 = 'Founded: ' + @corporation.founded.strftime('%Y/%B/%d')
+h3 = 'Revenue: ' + @corporation.revenue.to_s + 'bil'
+h3 = 'Area served: ' + @corporation.area_served
+h3 = 'Rating (0-10): ' + @corporation.rating.to_s
+h3 = 'Image: ' + image_tag(@corporation.avatar_url(:thumb)) if @corporation.avatar.present?
