@@ -14,7 +14,7 @@ class Employee < ApplicationRecord
 
   def validate_count_of_employees
     if taskmaster.employees.count >= 10
-      taskmaster.errors.add(:taskmaster, "can't has more then 10 employees")
+      taskmaster.errors.add(:taskmaster, "can't has more than 10 employees")
       taskmaster.errors[:taskmaster]
     end
   end

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       current_manager
     elsif taskmaster_signed_in?
       current_taskmaster
-    else
+    elsif
       current_employee
     end
   end

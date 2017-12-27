@@ -22,7 +22,7 @@ class TaskmastersController < ApplicationController
     authorize @taskmaster
 
     if @taskmaster.save
-      WorkMailer.sample_email(@taskmaster, params[:taskmaster][:password]).deliver_now
+      WorkMailer.invite_email(@taskmaster, params[:taskmaster][:password]).deliver_now
       redirect_to @taskmaster
     else
       render :new

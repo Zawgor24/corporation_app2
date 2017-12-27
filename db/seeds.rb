@@ -41,4 +41,4 @@ sam_workshop_sec = second_sam_factory.workshops.create(name: 'Secondary workshop
 apple_workshop = first_apple_factory.workshops.create(name: 'Main workshop')
 apple_workshop_sec = second_apple_factory.workshops.create(name: 'Secondary workshop')
 
-first_lg_factory.create_principal(email: 'principal@1.com', password: 123123, name: John)
+first_lg_factory.create_principal(email: 'principal@1.com', password: 123123, name: 'John')

@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
   before_action :find_taskmaster, only: %i[create new index]
 
   def index
-    @employees = @taskmaster.employees.all
+    @employees = @taskmaster.employees
 
     authorize @employees
   end
@@ -21,7 +21,7 @@ class EmployeesController < ApplicationController
     authorize @employee
 
     if @employee.save
-      WorkMailer.sample_email(@employee, params[:employee][:password]).deliver_now
+      WorkMailer.invite_email(@employee, params[:employee][:password]).deliver_now
       redirect_to @employee
     else
       render :new

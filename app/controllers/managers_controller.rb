@@ -17,7 +17,7 @@ class ManagersController < ApplicationController
     authorize @manager
 
     if @manager.save
-      WorkMailer.sample_email(@manager, params[:manager][:password]).deliver_now
+      WorkMailer.invite_email(@manager, params[:manager][:password]).deliver_now
       redirect_to @manager
     else
       render :new

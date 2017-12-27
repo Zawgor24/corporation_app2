@@ -3,9 +3,9 @@
 class WorkMailer < ApplicationMailer
   default from: 'zawgorodskiy.2012@gmail.com'
 
-  def sample_email(user, password)
+  def invite_email(user, password)
     @user = user
     @password = password
-    mail(to: @user.email, subject: 'Sample Email')
+    mail(to: @user.email, subject: 'Invite Email')
   end
 end
